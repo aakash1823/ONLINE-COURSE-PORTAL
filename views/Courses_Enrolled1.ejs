@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>Online Course Portal </title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+  <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+
+  <!-- Extra CSS Files -->
+  <link href="extra/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="extra/icofont/icofont.min.css" rel="stylesheet">
+  <link href="extra/boxicons/css/boxicons.min.css" rel="stylesheet">
+  
+
+  <!-- Template Main CSS File -->
+  <link href="css/style.css" rel="stylesheet">
+
+</head>
+<body>
+   
+    <header id="header">
+        <div class="d-flex flex-column">
+    
+          <div class="profile">
+            <img src="ab.jpg" alt="" class="img-fluid rounded-circle">
+            <h1 class="text-light" id="user"><a href="index.html">Admin</a></h1>
+          </div>
+    
+          <nav class="nav-menu">
+            <ul>            <ul><li class="active"><a href="AvailableCourse"><i class='bx bxs-book-bookmark'></i> <span>Available Course</span></a></li>
+
+                <li class="active"><a href="AddEnroll"><i class='bx bxs-book-bookmark'></i> <span>Enroll Course</span></a></li>
+                <li class="active"><a href="AllEnroll"><i class='bx bxs-book-bookmark'></i> <span>All Courses</span></a></li>
+
+            
+              
+
+                  <li class="dwn-lg-1"><a href="LOGIN"><i class="bx bx-log-out"></i> <span>Logout</span></a></li>
+
+              
+                
+
+             
+            </ul>
+          </nav><!-- .nav-menu -->
+          <button type="button" class="mobile-nav-toggle d-xl-none"><i class="icofont-navigation-menu"></i></button>
+    
+        </div>
+      </header>
+      <main id="main">
+
+        <!-- ======= About Section ======= -->
+
+        <section id="Remove_Course" class="Remove_Course">
+            <h1 class="we2">Courses Enrolled</h1>
+              
+
+            
+            <table class="table table-hover  table-striped "id="data">
+                <thead class="thead-dark">
+                    <tr>
+                        <th class="we4"scope="col">Course_id</th>
+                        
+                                        
+                    </tr>
+                    <% Course_Enrolled.forEach(function(enr) {%>
+                      <tr>
+                          <td>
+                              <%= enr.Course_id  %>
+                          </td>
+                          
+                      </tr>
+                      <% }); %>
+                </thead>
+                
+               
+              </table>
+              
+
+          
+        </section>
+       
+        <script src="2.js"></script>
+<script>
+            document.getElementById("user").innerHTML=localStorage.getItem('user');
+
+</script>
+
+    <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js " integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj " crossorigin="anonymous "></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js " integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN " crossorigin="anonymous "></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js " integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV " crossorigin="anonymous "></script>
+
+</body>

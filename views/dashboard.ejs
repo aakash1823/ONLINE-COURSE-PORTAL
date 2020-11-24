@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>Online Course Portal </title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.min.js" integrity="sha512-d9xgZrVZpmmQlfonhQUvTR7lMPtO7NkZMkA0ABN3PHCbKA5nqylQ/yWlFAyY6hYgdF1Qh6nYiuADWwKB4C2WSw==" crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+  <script src="https://cdn.anychart.com/releases/8.0.0/js/anychart-base.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.bundle.min.js" integrity="sha512-SuxO9djzjML6b9w9/I07IWnLnQhgyYVSpHZx0JV97kGBfTIsUYlWflyuW4ypnvhBrslz1yJ3R+S14fdCWmSmSA==" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.min.css" integrity="sha512-/zs32ZEJh+/EO2N1b0PEdoA10JkdC3zJ8L5FTiQu82LR9S/rOQNfQN7U59U9BC12swNeRAz3HSzIL2vpp4fv3w==" crossorigin="anonymous" />
+  <!-- Extra CSS Files -->
+  <link href="extra/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="extra/icofont/icofont.min.css" rel="stylesheet">
+  <link href="extra/boxicons/css/boxicons.min.css" rel="stylesheet">
+  
+
+  <!-- Template Main CSS File -->
+  <link href="css/style.css" rel="stylesheet">
+
+</head>
+<body>
+   
+    <header id="header">
+        <div class="d-flex flex-column">
+    
+          <div class="profile">
+            <img src="admin.png" alt="" class="img-fluid rounded-circle">
+            <h1 class="text-light"><a href="index.html">Admin</a></h1>
+            <p class="we">admin@gmail.com</p>
+          </div>
+    
+          <nav class="nav-menu">
+            <ul>
+              <li class="active"><a href="dash"><i class="bx bx-home"></i> <span>Dashboard</span></a></li>
+              <li class="dropdown"><a href="#"><i class="bx bx-user"></i> <span>Professors</span></a>
+                <div class="dropdown-content">
+                    <a href="AllFac">All Professors</a>
+                    <a href="Fac">Add Professor</a>
+                    <a href="EditFac">Edit Professor</a>
+                    <a href="RemFac">Remove Professor</a>
+                </div></li>
+              <li class="dropdown"><a href="#"><i class="bx bx-file-blank"></i> <span>Students</span></a>
+                <div class="dropdown-content">
+                    <a href="AllStud">All Students</a>
+                    <a href="Stud">Add Student</a>
+                    <a href="EditStud">Edit Student</a>
+                    <a href="RemStud">Remove Student</a>
+                </div></li>
+              <li class="dropdown"><a href="#"><i class="bx bx-book-content"></i> Course</a>
+                  <div class="dropdown-content">
+                  <a href="AllCourse">All Course</a>
+                  <a href="course">Add Course</a>
+                  <a href="EditCourse">Edit Course</a>
+                  <a href="RemCourse">Remove Course</a>
+                </div></li>
+              <li class="dropdown"><a href="#"><i class="bx bx-book-content"></i> Department</a>
+                <div class="dropdown-content">
+                    <a href="AllDept">All Department</a>
+                    <!-- <a href="Dept">Add Department</a> -->
+                    <a href="EditDept">Edit Department</a>
+                    <!-- <a href="RemDept">Remove Department</a> -->
+                  </div></li>
+                  <li class="active"><a href="Teach"><i class='bx bxs-book-bookmark'></i> <span>Assign Faculty</span></a></li>
+                  <li class="active"><a href="RemEnroll"><i class='bx bxs-book-bookmark'></i> <span>De-Register</span></a></li>
+                  <li class="dwn-lg"><a href="LOGIN"><i class="bx bx-log-out"></i> <span>Logout</span></a></li>
+
+              
+                
+
+             
+            </ul>
+          </nav><!-- .nav-menu -->
+          <button type="button" class="mobile-nav-toggle d-xl-none"><i class="icofont-navigation-menu"></i></button>
+    
+        </div>
+      </header>
+      <main id="main">
+
+        <!-- ======= About Section ======= -->
+
+        <section id="Add_Course" class="Add_Course">
+            <div class="row">
+                <div class="col-sm">
+            <div class="card text-white bg-primary mb-3" style="max-width: 18rem;">
+                <div class="card-header">TOTAL NO OF STUDENTS</div>
+                <div class="card-body">
+                   <h2 class="card-title"><%= total.total %></h2>
+                    <p class="card-text "><a href="AllStud" class="hovertot">Click here to View all the Students </a></p>
+                </div>
+              </div>
+                </div>
+                <div class="col-sm">
+                  <div class="card text-white bg-success mb-3" style="max-width: 18rem;">
+                    <div class="card-header">TOTAL NO OF FACULTY</div>
+                    <div class="card-body">
+                        <h2 class="card-title"><%= total1.total1 %></h2>
+                        <p class="card-text "><a href="AllFac" class="hovertot">Click here to View all the Faculties </a></p>
+                    </div>
+                  </div>
+                    </div>
+                    <div class="col-sm">
+                      <div class="card text-white bg-danger mb-3" style="max-width: 18rem;">
+                          <div class="card-header">TOTAL NO OF DEPT</div>
+                          <div class="card-body">         
+                            <h2 class="card-title"><%= total2.total2 %></h2>  
+                            <p class="card-text "><a href="AllDept" class="hovertot">Click here to View all the Departments </a></p>
+                          </div>
+                        </div>
+                          </div>
+                          <div class="col-sm">
+                            <div class="card text-white bg-dark mb-3" style="max-width: 18rem;">
+                                <div class="card-header">TOTAL NO OF COURSE</div>
+                                <div class="card-body">
+                                  <h2 class="card-title"><%= total3.total3 %></h2>
+                                  <p class="card-text "><a href="AllCourse" class="hovertot">Click here to View all the Available Courses </a></p>
+                                </div>
+                              </div>
+                                </div>
+            </div>
+              
+  
+          
+        </section>
+        <div class="row" style="margin-top: 3%;">
+          <div class="col-sm">
+        <div id="container" style="width: 80%; height:500px; "></div>
+        <div><h3 style="margin-left: 50px;">Number of Courses in Each Dept </h3></div>
+          </div>
+          <div class="col-sm">
+            <canvas width="500" id="myChart"></canvas>    
+             </div>
+            </div>
+          <div style="margin-left: 725px; margin-top: 30px;"><h3>Number Of Students in Each Dept</h3></div>  
+
+    <script>
+      anychart.onDocumentReady(function() {
+ 
+        // set the data
+        var data = [
+  ["AEE", <%-JSON.stringify(total4[0].CourseCount)%>],
+  ["CHE", <%-JSON.stringify(total4[1].CourseCount)%>],
+  ["CIV", <%-JSON.stringify(total4[2].CourseCount)%>],
+  ["CSE", <%-JSON.stringify(total4[3].CourseCount)%>],
+  ["ECE", <%-JSON.stringify(total4[4].CourseCount)%>],
+  ["EEE", <%-JSON.stringify(total4[5].CourseCount)%>],
+  ["EIE", <%-JSON.stringify(total4[6].CourseCount)%>],
+  ["MAT", <%-JSON.stringify(total4[7].CourseCount)%>],
+  ["MEE", <%-JSON.stringify(total4[8].CourseCount)%>],
+  ["PHY", <%-JSON.stringify(total4[9].CourseCount)%>],
+
+];
+// create a chart
+chart = anychart.column();
+// create a column series and set the data
+var series = chart.column(data);
+// set the container id
+chart.container("container");
+// initiate drawing the chart
+chart.draw();
+     });
+
+var ctx = document.getElementById("myChart").getContext('2d');
+
+var myChart = new Chart(ctx, {
+    type: 'doughnut',
+    data: {
+        labels: ["AEE",	"CHE","CIV","CSE","ECE","EEE","EIE","MAT","MEE","PHY"],
+        datasets: [{    
+            data: [<%-JSON.stringify(total5[0].StudentCount) %>,<%-JSON.stringify(total5[1].StudentCount) %>,<%-JSON.stringify(total5[2].StudentCount) %>,<%-JSON.stringify(total5[3].StudentCount) %>,<%-JSON.stringify(total5[4].StudentCount) %>,<%-JSON.stringify(total5[5].StudentCount) %>,<%-JSON.stringify(total5[6].StudentCount) %>,<%-JSON.stringify(total5[7].StudentCount) %>,<%-JSON.stringify(total5[8].StudentCount) %>,<%-JSON.stringify(total5[9].StudentCount) %>], // Specify the data values array
+          
+            borderColor: ['#2196f38c', '#f443368c', '#3f51b570', '#00968896','#8d6e63','#78909c','#43a047','#5c6bc0','#ec407a','#ffca28'],  
+            backgroundColor: ['#2196f38c', '#f443368c', '#3f51b570', '#00968896','#8d6e63','#78909c','#43a047','#5c6bc0','#ec407a','#ffca28'], 
+            borderWidth: 1 
+        }]},         
+    options: {
+      responsive: true, 
+      maintainAspectRatio: false,  
+    }
+});
+
+    </script>
+
+    <script src="3.js"></script>
+    <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js " integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj " crossorigin="anonymous "></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js " integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN " crossorigin="anonymous "></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js " integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV " crossorigin="anonymous "></script>
+
+</body>

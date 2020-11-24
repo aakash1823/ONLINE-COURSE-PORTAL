@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>Online Course Portal </title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+  <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+
+  <!-- Extra CSS Files -->
+  <link href="./extra/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="./extra/icofont/icofont.min.css" rel="stylesheet">
+  <link href="./extra/boxicons/css/boxicons.min.css" rel="stylesheet">
+  
+  <link href="css/style.css" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="css/style.css" rel="stylesheet">
+  <link href="2.css" rel="stylesheet">
+
+
+</head>
+<body>
+    <div class="container">
+        <div class="d-flex justify-content-center h-100">
+            <div class="card">
+                <div class="card-header">
+                    <h3>Sign In</h3>
+                    
+                </div>
+                <div class="card-body">
+                    <form action="http://localhost:3000/login" method="POST">
+                        <div class="input-group form-group">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text"><i class='bx bxs-user'></i></span>
+                            </div>
+                            <input type="text" name="username" class="form-control" placeholder="username">
+                            
+                        </div>
+                        <div class="input-group form-group">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text"><i class='bx bxs-key'></i></span>
+                            </div>
+                            <input type="password" name="password" class="form-control" placeholder="password">
+                        </div>
+                        <div class="row align-items-center remember preference">
+                            <select name='option' class="opt">
+                                <option value="student">Student</option>
+                                <option value="faculty">Faculty</option>
+                                <option value="Course-Registration">Crse-Reg</option>
+                                <option selected value="admin">Admin</option>
+                            </select>
+                        </div>
+                        <div class="form-group sub" >
+                            <button type="submit button" class="btn btn-warning button_color">Log in</button>
+                        </div>
+                    </form>
+                </div>
+                <div class="card-footer">
+                    
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+    </body>
+</html>

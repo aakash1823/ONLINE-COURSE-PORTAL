@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>Online Course Portal </title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+  <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+
+  <!-- Extra CSS Files -->
+  <link href="extra/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="extra/icofont/icofont.min.css" rel="stylesheet">
+  <link href="extra/boxicons/css/boxicons.min.css" rel="stylesheet">
+  
+
+  <!-- Template Main CSS File -->
+  <link href="css/style.css" rel="stylesheet">
+
+</head>
+<body>
+   
+    <header id="header">
+        <div class="d-flex flex-column">
+    
+          <div class="profile">
+            <img src="admin.png" alt="" class="img-fluid rounded-circle">
+            <h1 class="text-light"><a href="index.html">Admin</a></h1>
+            <p class="we">admin@gmail.com</p>
+          </div>
+    
+          <nav class="nav-menu">
+            <ul>
+              <li class="active"><a href="dash"><i class="bx bx-home"></i> <span>Dashboard</span></a></li>
+              <li class="dropdown"><a href="#"><i class="bx bx-user"></i> <span>Professors</span></a>
+                <div class="dropdown-content">
+                    <a href="AllFac">All Professors</a>
+                    <a href="Fac">Add Professor</a>
+                    <a href="EditFac">Edit Professor</a>
+                    <a href="RemFac">Remove Professor</a>
+                </div></li>
+              <li class="dropdown"><a href="#"><i class="bx bx-file-blank"></i> <span>Students</span></a>
+                <div class="dropdown-content">
+                    <a href="AllStud">All Students</a>
+                    <a href="Stud">Add Student</a>
+                    <a href="EditStud">Edit Student</a>
+                    <a href="RemStud">Remove Student</a>
+                </div></li>
+              <li class="dropdown"><a href="#"><i class="bx bx-book-content"></i> Course</a>
+                  <div class="dropdown-content">
+                  <a href="AllCourse">All Course</a>
+                  <a href="course">Add Course</a>
+                  <a href="EditCourse">Edit Course</a>
+                  <a href="RemCourse">Remove Course</a>
+                </div></li>
+              <li class="dropdown"><a href="#"><i class="bx bx-book-content"></i> Department</a>
+                <div class="dropdown-content">
+                    <a href="AllDept">All Department</a>
+                    <!-- <a href="Dept">Add Department</a> -->
+                    <a href="EditDept">Edit Department</a>
+                    <!-- <a href="RemDept">Remove Department</a> -->
+                  </div></li>
+                  <li class="active"><a href="Teach"><i class='bx bxs-book-bookmark'></i> <span>Assign Faculty</span></a></li>
+                  <li class="active"><a href="RemEnroll"><i class='bx bxs-book-bookmark'></i> <span>De-Register</span></a></li>
+
+                  <li class="dwn-lg"><a href="LOGIN"><i class="bx bx-log-out"></i> <span>Logout</span></a></li>
+
+                
+
+             
+            </ul>
+          </nav><!-- .nav-menu -->
+          <button type="button" class="mobile-nav-toggle d-xl-none"><i class="icofont-navigation-menu"></i></button>
+    
+        </div>
+      </header>
+      <main id="main">
+
+        <!-- ======= About Section ======= -->
+
+        <section id="Edit_Faculty" class="Edit_Faculty">
+            <h1 class="we2">Edit Faculty</h1>
+            <form method='POST' action='http://localhost:3000/edit/faculty'>
+              <!-- Roll_no, S_Fname, S_Lname, Gender, DOB, Year_enrolled, S_password, Email, Address, Dept_id -->
+                <div class="form-row">
+                  <div class="form-group col-md-6">
+                    <label>First Name</label>
+                    <input type="text" name='F_Fname' class="form-control" id="fname" placeholder="Fname" required>
+                  </div>
+                  <div class="form-group col-md-6">
+                    <label>Last name</label>
+                    <input name='F_Lname' type="text" class="form-control" id="lname" placeholder="Lname" > 
+                  </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                      <label>DOB</label>
+                      <input name='DOB' type="date" class="form-control" id="DOB" placeholder="DOB" required>
+                    </div>
+                    <div class="form-group col-md-6">
+                      <label>Faculty ID</label>
+                      <input name="Faculty_id" type="text" class="form-control" id="Faculty_id" placeholder="ID" required>
+                    </div>
+                </div>
+                <div class="form-group">
+                  <label>Email</label>
+                  <input name='Email' type="email" class="form-control" id="Email" placeholder="@gmail.com" required>
+                </div>
+                
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <label>Department</label>
+                        <select name="Dept_id" id="inputState" class="form-control" required>
+                        
+                        <option selected>Choose...</option>
+                        <option value='CSE'>CSE</option>
+                        <option value='ECE'>ECE</option>
+                        <option value='EEE'>EEE</option>
+                        <option value='MECH'>MEE</option>
+                        <option value='AEROSPACE'>AEE</option>
+                        <option value='CIVIL'>CIV</option>
+                        <option value='EIE'>EIE</option>
+                        <option value='MAT'>MAT</option>
+                        <option value='CHE'>CHE</option>
+                        <option value='PHY'>PHY</option>
+                    </select>
+                  </DIV>
+                    <div class="form-group col-md-6">
+                      <label>Gender</label>
+                      <select name="Gender" id="inputState1" class="form-control" required>
+                      
+                      <option selected>Choose...</option>
+                      <option>M</option>
+                      <option>F</option>
+                  </select>
+                  </div>
+                  
+                    
+                </div>
+                <div class="form-row">
+                  
+                  <div class="form-group col-md-6">
+                    <label>Phone number</label>
+                    <input type="number" class="form-control" id="phone" placeholder="Phoneno"required>
+                  </div>
+                  <div class="form-group col-md-6">
+                    <label>Faculty Password:</label>
+                    <input name='F_password' type="password" class="form-control" id="password" placeholder="password"required>
+                  </div>
+              </div>
+          
+            
+                <button type="submit" class="btn btn-primary submit" id="submit">Submit</button>
+              </form>          
+              <br>
+           
+
+          
+        </section>
+        <script src="3.js"></script>
+
+    <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js " integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj " crossorigin="anonymous "></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js " integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN " crossorigin="anonymous "></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js " integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV " crossorigin="anonymous "></script>
+
+</body>

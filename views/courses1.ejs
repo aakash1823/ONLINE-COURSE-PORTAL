@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <link rel="icon" href="img/favicon.png" type="image/png" />
+    <title>Courses</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="extra\bootstrap\css\bootstrap.css" />
+    <link rel="stylesheet" href="extra\flaticon.css" />
+    <link rel="stylesheet" href="extra\themify-icons.css" />
+    <link rel="stylesheet" href="extra\vendors\owl-carousel\owl.carousel.min.css" />
+    <link rel="stylesheet" href="extra\vendors\nice-select\css\nice-select.css" />
+    <!-- main css -->
+    <link rel="stylesheet" href="css\style1.css" />
+    
+  </head>
+
+  <body>
+    <!--================ Start Header Menu Area =================-->
+    <header class="header_area">
+      <div class="main_menu">
+        <div id="user4" hidden></div>
+
+        <nav class="navbar navbar-expand-lg navbar-light">
+          <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <a class="navbar-brand logo_h" href="index.html"
+              ><img src="img/logo.png" alt=""
+            /></a>
+            <button
+              class="navbar-toggler"
+              type="button"
+              data-toggle="collapse"
+              data-target="#navbarSupportedContent"
+              aria-controls="navbarSupportedContent"
+              aria-expanded="false"
+              aria-label="Toggle navigation"
+            >
+              <span class="icon-bar"></span> <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div
+              class="collapse navbar-collapse offset"
+              id="navbarSupportedContent"
+            >
+              <ul class="nav navbar-nav menu_nav ml-auto">
+                <li class="nav-item active ">
+                  <a class="nav-link" href="ViewCourse">Courses</a>
+                </li>
+                <li class="nav-item">
+                  <form method='POST' action='http://localhost:3000/Profile '>
+                    <button type="submit" class="cldr" id="ln" name="username"><a class="nav-link"  >Profile</a></button>
+                </form>         
+                     </li>
+                     <li class="nav-item">
+                      <a class="nav-link" href="login.html">Log Out</a>
+                    </li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+      </div>
+    </header>
+    <!--================ End Header Menu Area =================-->
+
+    <!--================Home Banner Area =================-->
+    <section class="banner_area">
+      <div class="banner_inner d-flex align-items-center">
+        <div class="overlay"></div>
+        <div class="container">
+          <div class="row justify-content-center">
+            <div class="col-lg-6">
+              <div class="banner_content text-center">
+                <h2>Courses</h2>
+                <div class="page_link">
+                  <a href="index.html">Home</a>
+                  <a href="courses.html">Courses</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!--================End Home Banner Area =================-->
+
+    <!--================ Start Popular Courses Area =================-->
+    <div class="popular_courses section_gap_top">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-lg-5">
+            <div class="main_title">
+              <h2 class="mb-3">Courses</h2>
+             
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <!-- single course -->
+          <div class="col-lg-12">
+            <div class="owl-carousel active_course">
+            <% for(let obj of view) {%>
+
+              <div class="single_course">
+                <div class="course_head">
+                  <img class="img-fluid a" src="img\courses\<%= obj.Course_id %>.jpg" alt=""  />
+                </div>
+                <div class="course_content">
+                  
+                  <span class="tag mb-4 d-inline-block"><%= obj.Course_id %></span>
+                  <h4 class="mb-3">
+                    <a href="/course/<%= obj.Course_id%>"><%= obj.Course_name %></a>
+                  </h4>
+                  
+                  <div
+                    class="course_meta d-flex justify-content-lg-between align-items-lg-center flex-lg-row flex-column mt-4"
+                  >
+                    
+                    <div class="mt-lg-0 mt-3">
+                      <span class="meta_info mr-4">
+                        
+                      </span>
+                      <span class="meta_info"
+                        ></span
+                      >
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <% }%>
+             
+
+              
+              
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--================ End Popular Courses Area =================-->
+
+   <script>
+         document.getElementById("user4").innerHTML=localStorage.getItem('username');
+         document.getElementById("ln").value=localStorage.getItem('username');
+
+   </script>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="extra\jquery-3.2.1.min.js"></script>
+    <script src="extra\popper.js"></script>
+    <script src="extra\bootstrap\js\bootstrap.min.js"></script>
+    <script src="extra\vendors\nice-select\js\jquery.nice-select.min.js"></script>
+    <script src="extra\vendors\owl-carousel\owl.carousel.min.js"></script>
+    <script src="extra\owl-carousel-thumb.min.js"></script>
+    <script src="extra\jquery.ajaxchimp.min.js"></script>
+    <script src="extra\mail-script.js"></script>
+    <!--gmaps Js-->
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCjCGmQ0Uq4exrzdcL6rvxywDDOvfAu6eE"></script>
+    <script src="extra\gmaps.min.js"></script>
+    <script src="extra\theme.js"></script>
+  </body>
+</html>

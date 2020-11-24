@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <link rel="icon" href="/img/favicon.png" type="image/png" />
+  <title>Courses Details</title>
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="\extra\bootstrap\css\bootstrap.css" />
+  <link rel="stylesheet" href="\extra\flaticon.css" />
+  <link rel="stylesheet" href="\extra\themify-icons.css" />
+  <link rel="stylesheet" href="\extra\vendors\owl-carousel\owl.carousel.min.css" />
+  <link rel="stylesheet" href="\extra\vendors\nice-select\css\nice-select.css" />
+  <!-- main css -->
+  <link rel="stylesheet" href="\css\style1.css" />
+</head>
+
+<body>
+  <!--================ Start Header Menu Area =================-->
+  <header class="header_area">
+    <div class="main_menu">
+
+      <nav class="navbar navbar-expand-lg navbar-light">
+        <div class="container">
+          <!-- Brand and toggle get grouped for better mobile display -->
+          <a class="navbar-brand logo_h" href="index.html"><img src="/img/logo.png" alt="" /></a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="icon-bar"></span> <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <!-- Collect the nav links, forms, and other content for toggling -->
+          <div class="collapse navbar-collapse offset" id="navbarSupportedContent">
+            <ul class="nav navbar-nav menu_nav ml-auto">
+              
+              <li class="nav-item active ">
+                <form method='POST' action='http://localhost:3000/ViewCourse '>
+                  <button type="submit" class="cldr" id="ln" name="username"><a class="nav-link"  >Courses</a></button>
+              </form>
+              </li>
+                <li class="nav-item ">
+                  <form method='POST' action='http://localhost:3000/Profile '>
+                    <button type="submit" class="cldr" id="ln1" name="username"><a class="nav-link" >Profile</a></button>
+                </form>
+                </li>
+              <li class="nav-item">
+                <a class="nav-link" href="login.html">Log Out</a>
+              </li>
+              
+
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </div>
+  </header>
+  <!--================ End Header Menu Area =================-->
+
+  <!--================Home Banner Area =================-->
+  <section class="banner_area">
+    <div class="banner_inner d-flex align-items-center">
+      <div class="overlay"></div>
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-lg-6">
+            <div class="banner_content text-center">
+              <h2>Course Details</h2>
+              <div class="page_link">
+                <a href="index.html">Home</a>
+                <a href="courses.html">Courses</a>
+                <a href="course-details.html">Courses Details</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!--================End Home Banner Area =================-->
+
+  <!--================ Start Course Details Area =================-->
+  <section class="course_details_area section_gap">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 course_details_left">
+          <div class="main_image">
+            <img class="img-fluid b" src="\img\courses\<%=val %>.jpg" alt="">
+          </div>
+          <div class="content_wrapper">
+            <h4 class="title">Objectives</h4>
+            <div class="content">
+              <%= det.details %>
+            </div>
+
+
+            <h4 class="title">Resources</h4>
+            <form method='POST' action='http://localhost:3000/stud/resource'>
+              <button type="submit" class="btn btn-primary submit" name="submit" value="<%=val %>">Click here to view the Resources!</button>
+
+            </form>
+            <h4 class="title">Announcements</h4>
+            <form method='POST' action='http://localhost:3000/stud/announcement'>
+              <button type="submit" class="btn btn-primary submit" name="submit" value="<%=val %>">Click here to view the Announcement!</button>
+
+            </form>
+            <h4 class="title">Assessment</h4>
+            <form method='POST' action='http://localhost:3000/stud/test'>
+              <button type="submit" class="btn btn-primary submit" name="submit" value="<%=val %>">Click here to view the Tests!</button>
+
+            </form>
+            <h4 class="title">Marks</h4>
+            <form method='POST' action='http://localhost:3000/stud/marks'>
+              <input type="text" name="Roll_no"id="user" hidden>
+              <button type="submit" class="btn btn-primary submit" name="submit" value="<%=val %>">Click here to view Marks!</button>
+
+            </form>
+            <h4 class="title">Grade</h4>
+            <form method='POST' action='http://localhost:3000/stud/grades'>
+              <input type="text" name="Roll_no" id="user1" hidden>
+              <button type="submit" class="btn btn-primary submit" name="submit" value="<%=val %>">Click here to view Grade!</button>
+
+            </form>
+          </div>
+        </div>
+
+
+        <div class="col-lg-4 right-contents">
+          <ul>
+            <li>
+              <a class="justify-content-between d-flex" href="#">
+                <p>Faculty Name</p>
+                <span class="or"><%= Facname.F_Fname+" "+Facname.F_Lname %> </span>
+              </a>
+            </li>
+
+
+
+          </ul>
+          <a href="#" class="primary-btn2 text-uppercase enroll rounded-0 text-white">Enroll the course</a>
+<!-- 
+          <h4 class="title">Reviews</h4>
+          <div class="content">
+            <div class="review-top row pt-40">
+              <div class="col-lg-12">
+                <h6 class="mb-15">Provide Your Rating</h6>
+                <div class="d-flex flex-row reviews justify-content-between">
+                  <span>Quality</span>
+                  <div class="star">
+                    <i class="ti-star checked"></i>
+                    <i class="ti-star checked"></i>
+                    <i class="ti-star checked"></i>
+                    <i class="ti-star"></i>
+                    <i class="ti-star"></i>
+                  </div>
+                  <span>Outstanding</span>
+                </div>
+                <div class="d-flex flex-row reviews justify-content-between">
+                  <span>Puncuality</span>
+                  <div class="star">
+                    <i class="ti-star checked"></i>
+                    <i class="ti-star checked"></i>
+                    <i class="ti-star checked"></i>
+                    <i class="ti-star"></i>
+                    <i class="ti-star"></i>
+                  </div>
+                  <span>Outstanding</span>
+                </div>
+                <div class="d-flex flex-row reviews justify-content-between">
+                  <span>Pace</span>
+                  <div class="star">
+                    <i class="ti-star checked"></i>
+                    <i class="ti-star checked"></i>
+                    <i class="ti-star checked"></i>
+                    <i class="ti-star"></i>
+                    <i class="ti-star"></i>
+                  </div>
+                  <span>Outstanding</span>
+                </div>
+              </div>
+            </div>
+          -->
+            <div class="feedeback">
+              <h6>Your Feedback</h6>
+              <form action="/add/feedback" method="POST">
+                <input type="text" name="username" id="user2" style="display:none" >
+                <input type="text" name="Course_id" value="<%= val%>" style="display:none">
+                <input type="text" name="faculty_id" value='<%= fac.Faculty_id %>' style="display:none" >
+              <textarea name="feedback" id="feedback" class="form-control" cols="10" rows="10"></textarea>
+              <div class="mt-10 text-right">
+                <button type="submit" class="btn btn-primary submit" name="submit" value="<%= val%>">Submit</button>
+              </div>
+            </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+  </section>
+
+  <!--================ End Course Details Area =================-->
+
+
+  <script>
+    
+    document.getElementById("user").value=localStorage.getItem('username');
+    document.getElementById("user1").value=localStorage.getItem('username');
+    document.getElementById("user2").value=localStorage.getItem('username');
+    document.getElementById("ln").value=localStorage.getItem('username');
+    document.getElementById("ln1").value=localStorage.getItem('username');
+
+  </script>
+
+  <!-- Optional JavaScript -->
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  <script src="\extra\jquery-3.2.1.min.js"></script>
+  <script src="\extra\popper.js"></script>
+  <script src="\extra\bootstrap\js\bootstrap.min.js"></script>
+  <script src="\extra\vendors\nice-select\js\jquery.nice-select.min.js"></script>
+  <script src="\extra\vendors\owl-carousel\owl.carousel.min.js"></script>
+  <script src="\extra\owl-carousel-thumb.min.js"></script>
+  <script src="\extra\jquery.ajaxchimp.min.js"></script>
+  <script src="\extra\mail-script.js"></script>
+  <!--gmaps Js-->
+
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCjCGmQ0Uq4exrzdcL6rvxywDDOvfAu6eE"></script>
+  <script src="\extra\gmaps.min.js"></script>
+  <script src="\extra\theme.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>Online Course Portal </title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+  <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+
+  <!-- Extra CSS Files -->
+  <link href="extra/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="extra/icofont/icofont.min.css" rel="stylesheet">
+  <link href="extra/boxicons/css/boxicons.min.css" rel="stylesheet">
+  
+
+  <!-- Template Main CSS File -->
+  <link href="css/style.css" rel="stylesheet">
+
+</head>
+<body>
+   
+    <header id="header">
+        <div class="d-flex flex-column">
+    
+          <div class="profile">
+            <img src="ab.jpg" alt="" class="img-fluid rounded-circle">
+            <h1 class="text-light" id="user"><a href="index.html"></a></h1>
+          </div>
+    
+          <nav class="nav-menu">
+            <ul>            <ul><li class="active"><a href="AvailableCourse"><i class='bx bxs-book-bookmark'></i> <span>Available Course</span></a></li>
+
+                <li class="active"><a href="AddEnroll"><i class='bx bxs-book-bookmark'></i> <span>Enroll Course</span></a></li>
+                <li class="active"><a href="AllEnroll"><i class='bx bxs-book-bookmark'></i> <span>All Courses</span></a></li>
+
+            
+              
+
+                  <li class="dwn-lg-1"><a href="LOGIN"><i class="bx bx-log-out"></i> <span>Logout</span></a></li>
+
+              
+                
+
+             
+            </ul>
+          </nav><!-- .nav-menu -->
+          <button type="button" class="mobile-nav-toggle d-xl-none"><i class="icofont-navigation-menu"></i></button>
+    
+        </div>
+      </header>
+      <main id="main">
+
+        <!-- ======= About Section ======= -->
+
+        <section id="Enroll_Course" class="Enroll_Course">
+            <h1 class="we2">Enroll Course</h1>
+            <form method='POST' action='http://localhost:3000/enroll/course'>
+              <!-- Roll_no, S_Fname, S_Lname, Gender, DOB, Year_enrolled, S_password, Email, Address, Dept_id -->
+               
+                <div class="form-row">
+        
+                    <div class="form-group col-md-6">
+                      <label>Roll No</label>
+                      <input name="Roll_no" type="text" class="form-control" id="user1" placeholder="Rollno" readonly>
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label>Course ID</label>
+                        <input name="Course_id" type="text" class="form-control" id="Course_id" placeholder="ID" required>
+                      </div>
+                </div>
+                  
+          
+            
+                <button type="submit" class="btn btn-primary submit" id="submit">Submit</button>
+              </form>          
+              <br>
+              
+
+          
+        </section>
+       
+        <script src="2.js"></script>
+        <script>
+         
+          document.getElementById("user").innerHTML=localStorage.getItem('user');
+          document.getElementById("user1").value=localStorage.getItem('user');
+    </script>
+ 
+
+    <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js " integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj " crossorigin="anonymous "></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js " integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN " crossorigin="anonymous "></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js " integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV " crossorigin="anonymous "></script>
+
+</body>

@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>Online Course Portal </title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+  <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+
+  <!-- Extra CSS Files -->
+  <link href="extra/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="extra/icofont/icofont.min.css" rel="stylesheet">
+  <link href="extra/boxicons/css/boxicons.min.css" rel="stylesheet">
+  
+
+  <!-- Template Main CSS File -->
+  <link href="css/style.css" rel="stylesheet">
+
+</head>
+<body>
+   
+    <header id="header">
+        <div class="d-flex flex-column">
+    
+          <div class="profile">
+            <img src="admin.png" alt="" class="img-fluid rounded-circle">
+            <h1 class="text-light"><a href="index.html">Admin</a></h1>
+            <p class="we">admin@gmail.com</p>
+          </div>
+    
+          <nav class="nav-menu">
+            <ul>
+              <li class="active"><a href="dash"><i class="bx bx-home"></i> <span>Dashboard</span></a></li>
+              <li class="dropdown"><a href="#"><i class="bx bx-user"></i> <span>Professors</span></a>
+                <div class="dropdown-content">
+                    <a href="AllFac">All Professors</a>
+                    <a href="Fac">Add Professor</a>
+                    <a href="EditFac">Edit Professor</a>
+                    <a href="RemFac">Remove Professor</a>
+                </div></li>
+              <li class="dropdown"><a href="#"><i class="bx bx-file-blank"></i> <span>Students</span></a>
+                <div class="dropdown-content">
+                    <a href="AllStud">All Students</a>
+                    <a href="Stud">Add Student</a>
+                    <a href="EditStud">Edit Student</a>
+                    <a href="RemStud">Remove Student</a>
+                </div></li>
+              <li class="dropdown"><a href="#"><i class="bx bx-book-content"></i> Course</a>
+                  <div class="dropdown-content">
+                  <a href="AllCourse">All Course</a>
+                  <a href="course">Add Course</a>
+                  <a href="EditCourse">Edit Course</a>
+                  <a href="RemCourse">Remove Course</a>
+                </div></li>
+              <li class="dropdown"><a href="#"><i class="bx bx-book-content"></i> Department</a>
+                <div class="dropdown-content">
+                    <a href="AllDept">All Department</a>
+                    <!-- <a href="Dept">Add Department</a> -->
+                    <a href="EditDept">Edit Department</a>
+                    <!-- <a href="RemDept">Remove Department</a> -->
+                  </div></li>
+                  <li class="active"><a href="Teach"><i class='bx bxs-book-bookmark'></i> <span>Assign Faculty</span></a></li>
+                  <li class="active"><a href="RemEnroll"><i class='bx bxs-book-bookmark'></i> <span>De-Register</span></a></li>
+                  <li class="dwn-lg"><a href="LOGIN"><i class="bx bx-log-out"></i> <span>Logout</span></a></li>
+
+              
+                
+
+            </ul>
+          </nav><!-- .nav-menu -->
+          <button type="button" class="mobile-nav-toggle d-xl-none"><i class="icofont-navigation-menu"></i></button>
+    
+        </div>
+      </header>
+      <main id="main">
+
+        <!-- ======= About Section ======= -->
+
+        <section id="All_Dept" class="All_Dept">
+            <h1 class="we2">All Department</h1>
+              <!-- Roll_no, S_Fname, S_Lname, Gender, DOB, Year_enrolled, S_password, Email, Address, Dept_id -->
+                          
+              
+              <table class="table table-hover  table-striped "id="data">
+                <thead class="thead-dark">
+                    <tr>
+                        <th class="we4"scope="col">Dept_ID</th>
+                        <th class="we4"scope="col">Dept_Name</th>
+                        <th class="we4"scope="col">HOD_Name</th>
+                        <th class="we4"scope="col">Dept_Capacity</th>
+                        
+                    </tr>
+                    <% departments.forEach(function(department) {%>
+                      <tr>
+                          <td>
+                              <%= department.Dept_id  %>
+                          </td>
+                          <td>
+                              <%= department.Dept_name %>
+                          </td>
+                          <td>
+                              <%= department.HOD %>
+                          </td>
+                          <td>
+                              <%= department.Dept_capacity %>
+                          </td>
+                          
+                      </tr>
+                      <% }); %>
+                </thead>
+                
+               
+              </table>
+
+          
+        </section>
+        <script src="4.js"></script>
+
+    <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js " integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj " crossorigin="anonymous "></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js " integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN " crossorigin="anonymous "></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js " integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV " crossorigin="anonymous "></script>
+
+</body>
